@@ -6,7 +6,7 @@
 <title>Antônio Gabriel · Portfólio</title>
 <meta name="description" content="Sistemas web para negócios: o Marcaí no ar e protótipos para serviços, reforma e fazenda.">
 <meta name="theme-color" content="#f5f4f0">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-64.png" sizes="64x64" type="image/png">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,11 +14,11 @@
 <style>
 :root{--bg:#f5f4f0;--surface:#ffffff;--fg:#17191c;--muted:#5d636b;--line:#e3e1da;--chip:#ecebe5;--live:#0f8a5f;--live-soft:#dcf4ea;
 --marcai:#0e9f8a;--marcai-soft:#d9f3ee;--polo:#0369a1;--polo-soft:#e0f2fe;--obra:#4338ca;--obra-soft:#e0e7ff;--campo:#4d7c0f;--campo-soft:#ecfccb;--wa:#1f8a4c;--err:#b42e28;
---fd:'Space Grotesk',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif}
+--locafesta:#c2410c;--locafesta-soft:#ffedd5;--apito:#047857;--apito-soft:#d1fae5;--patinhas:#6d28d9;--patinhas-soft:#ede9fe;--festeiro:#be185d;--festeiro-soft:#fce7f3;--vaivan:#a16207;--vaivan-soft:#fef3c7;--caderneta:#1d4ed8;--caderneta-soft:#dbeafe;--chave:#0f766e;--chave-soft:#ccfbf1;--fd:'Space Grotesk',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;--live:#4fd1a0;--live-soft:#12352a;
---marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--err:#f08a84;color-scheme:dark}}
+--marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--locafesta:#fdba74;--locafesta-soft:#3a1a0c;--apito:#6ee7b7;--apito-soft:#0f2e24;--patinhas:#c4b5fd;--patinhas-soft:#261a45;--festeiro:#f9a8d4;--festeiro-soft:#3b1428;--vaivan:#fcd34d;--vaivan-soft:#352a0c;--caderneta:#93c5fd;--caderneta-soft:#16213f;--chave:#5eead4;--chave-soft:#0f2d2a;--err:#f08a84;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;--live:#4fd1a0;--live-soft:#12352a;
---marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--err:#f08a84;color-scheme:dark}
+--marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--locafesta:#fdba74;--locafesta-soft:#3a1a0c;--apito:#6ee7b7;--apito-soft:#0f2e24;--patinhas:#c4b5fd;--patinhas-soft:#261a45;--festeiro:#f9a8d4;--festeiro-soft:#3b1428;--vaivan:#fcd34d;--vaivan-soft:#352a0c;--caderneta:#93c5fd;--caderneta-soft:#16213f;--chave:#5eead4;--chave-soft:#0f2d2a;--err:#f08a84;color-scheme:dark}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--fb);padding-block:max(28px,env(safe-area-inset-top,0px)) 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -43,6 +43,17 @@ section>p.sub{margin:0 0 18px;color:var(--muted)}
 .card.marcai{--a:var(--marcai);--s:var(--marcai-soft)}
 .card.obra{--a:var(--obra);--s:var(--obra-soft)}
 .card.campo{--a:var(--campo);--s:var(--campo-soft)}
+.card.locafesta{--a:var(--locafesta);--s:var(--locafesta-soft)}
+.card.apito{--a:var(--apito);--s:var(--apito-soft)}
+.card.patinhas{--a:var(--patinhas);--s:var(--patinhas-soft)}
+.card.festeiro{--a:var(--festeiro);--s:var(--festeiro-soft)}
+.card.vaivan{--a:var(--vaivan);--s:var(--vaivan-soft)}
+.card.caderneta{--a:var(--caderneta);--s:var(--caderneta-soft)}
+.card.chave{--a:var(--chave);--s:var(--chave-soft)}
+.body h3{display:flex;align-items:center;gap:10px}
+.body h3 img{width:30px;height:30px;border-radius:8px;flex:none}
+.mh h2{display:flex;align-items:center;gap:10px}
+.mh h2 img{width:32px;height:32px;border-radius:9px}
 .shot{background:var(--s);padding:20px 20px 0;display:flex;justify-content:center;gap:12px;overflow:hidden}
 .shot img{width:min(100%,240px);border-radius:16px 16px 0 0;box-shadow:0 10px 30px rgba(0,0,0,.18);aspect-ratio:520/760;object-fit:cover;object-position:top}
 .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
@@ -52,6 +63,7 @@ section>p.sub{margin:0 0 18px;color:var(--muted)}
 .more{margin-top:auto;padding-top:8px;font-weight:600;color:var(--a);display:inline-flex;align-items:center;gap:6px}
 .card.wide .shot img{width:min(30%,220px)}
 @media (min-width:760px){.card.wide{flex-direction:row}.card.wide .shot{flex:1.3;padding:26px 26px 0;align-items:flex-end}.card.wide .body{flex:1;padding:28px;justify-content:center}}
+@media (min-width:760px){.grid.three>.card:last-child:nth-child(3n+1){grid-column:1/-1;flex-direction:row}.grid.three>.card:last-child:nth-child(3n+1) .shot{flex:1.3;padding:26px 26px 0;align-items:flex-end}.grid.three>.card:last-child:nth-child(3n+1) .body{flex:1;padding:28px;justify-content:center}.grid.three>.card:last-child:nth-child(3n+1) .more{margin-top:8px}}
 @media (max-width:759px){.card.wide .shot img:nth-child(n+2){display:none}.card.wide .shot img{width:min(100%,240px)}}
 .live{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:var(--live-soft);color:var(--live);font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
 dialog{border:0;padding:0;border-radius:20px;width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 32px);background:var(--surface);color:var(--fg);box-shadow:0 24px 70px rgba(0,0,0,.35)}
@@ -124,7 +136,7 @@ dialog[open]::backdrop{animation:fade .32s ease}
 <body>
 <div class="wrap">
 <header>
-<p class="eye"><img src="favicon.svg" alt="" width="30" height="30">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</p>
+<p class="eye"><img src="icon-192.png" alt="" width="30" height="30">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</p>
 <h1>Sistemas web para o dia a dia de negócios de verdade</h1>
 <p class="lead">Agenda, pedidos, ordens de serviço, estoque e cobrança, pensados para usar no celular. Um produto no ar e protótipos para você abrir e testar agora.</p>
 <div class="cta"><a class="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir um orçamento</a><a class="soft" href="#ideia">Tenho uma ideia</a></div>
@@ -136,26 +148,54 @@ dialog[open]::backdrop{animation:fade .32s ease}
 <div class="grid">
 <button type="button" class="card marcai wide" data-p="marcai" aria-haspopup="dialog">
 <div class="shot"><img src="img/m_land.jpg" alt="Página inicial do Marcaí" loading="lazy"><img src="img/m_salao.jpg" alt="Agendamento no Salão Aurora pelo Marcaí" loading="lazy"><img src="img/m_forno.jpg" alt="Pedido na Forno &amp; Afeto pelo Marcaí" loading="lazy"></div>
-<div class="body"><span class="live">No ar desde setembro de 2026</span><div class="who">Barbearias, salões, arenas e confeitarias</div><h3>Marcaí</h3><p>Agenda online e pedidos para pequenos negócios. Cada negócio ganha a própria página, e o cliente marca ou pede pelo celular, sem criar conta.</p><span class="more">Ver detalhes e demonstração →</span></div>
+<div class="body"><span class="live">No ar desde setembro de 2026</span><div class="who">Barbearias, salões, arenas e confeitarias</div><h3><img src="https://marcaionline.com.br/app-icon-192.png" alt="">Marcaí</h3><p>Agenda online e pedidos para pequenos negócios. Cada negócio ganha a própria página, e o cliente marca ou pede pelo celular, sem criar conta.</p><span class="more">Ver detalhes e demonstração →</span></div>
 </button>
 </div>
 </section>
 
 <section aria-labelledby="s-demo">
 <h2 id="s-demo">Projetos em demonstração e desenvolvimento</h2>
-<p class="sub">Protótipos que funcionam no celular, com dados de exemplo e login de teste. A senha de todos é <b>demo</b>.</p>
+<p class="sub">Dez protótipos que funcionam no celular, com dados de exemplo, login de teste e um link para o cliente final. A senha de todos é <b>demo</b>.</p>
 <div class="grid three">
 <button type="button" class="card" data-p="polo" aria-haspopup="dialog">
 <div class="shot"><img src="img/polo.jpg" alt="Tela inicial do Polo Clima" loading="lazy"></div>
-<div class="body"><div class="who">Clima, segurança e solar</div><h3>Polo Clima</h3><p>Loja com estoque próprio, chamados pelo link e ordens de serviço da equipe.</p><span class="more">Ver detalhes →</span></div>
+<div class="body"><div class="who">Clima, segurança e solar</div><h3><img src="https://agabrielr.github.io/polo-clima/icon-192.png" alt="">Polo Clima</h3><p>Loja com estoque próprio, chamados pelo link e ordens de serviço da equipe.</p><span class="more">Ver detalhes →</span></div>
 </button>
 <button type="button" class="card obra" data-p="obra" aria-haspopup="dialog">
 <div class="shot"><img src="img/obra.jpg" alt="Obra de banheiro no ObraClara" loading="lazy"></div>
-<div class="body"><div class="who">Reforma e construção</div><h3>ObraClara</h3><p>Propostas de mão de obra e acompanhamento da obra por etapas, com foto e pagamento.</p><span class="more">Ver detalhes →</span></div>
+<div class="body"><div class="who">Reforma e construção</div><h3><img src="https://agabrielr.github.io/obraclara/icon-192.png" alt="">ObraClara</h3><p>Propostas de mão de obra e acompanhamento da obra por etapas, com foto e pagamento.</p><span class="more">Ver detalhes →</span></div>
 </button>
 <button type="button" class="card campo" data-p="campo" aria-haspopup="dialog">
 <div class="shot"><img src="img/campo.jpg" alt="Painel do Campo Certo" loading="lazy"></div>
-<div class="body"><div class="who">Fazenda de gado de corte</div><h3>Campo Certo</h3><p>Pastos, pesagem com a engorda calculada, diário e o dinheiro do mês.</p><span class="more">Ver detalhes →</span></div>
+<div class="body"><div class="who">Fazenda de gado de corte</div><h3><img src="https://agabrielr.github.io/campo-certo/icon-192.png" alt="">Campo Certo</h3><p>Pastos, pesagem com a engorda calculada, diário e o dinheiro do mês.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card locafesta" data-p="locafesta" aria-haspopup="dialog">
+<div class="shot"><img src="img/locafesta.jpg" alt="Tela do Locafesta" loading="lazy"></div>
+<div class="body"><div class="who">Festa e eventos</div><h3><img src="locafesta/icon-192.png" alt="">Locafesta</h3><p>Locação de brinquedos e mesas: o cliente vê o que está livre, aceita o contrato e paga o sinal por Pix.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card apito" data-p="apito" aria-haspopup="dialog">
+<div class="shot"><img src="img/apito.jpg" alt="Tela do Apito" loading="lazy"></div>
+<div class="body"><div class="who">Escolinhas de esporte e dança</div><h3><img src="apito/icon-192.png" alt="">Apito</h3><p>Turmas, chamada pelo celular e mensalidade por Pix, com portal do responsável.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card patinhas" data-p="patinhas" aria-haspopup="dialog">
+<div class="shot"><img src="img/patinhas.jpg" alt="Tela do Patinhas" loading="lazy"></div>
+<div class="body"><div class="who">Creche e hotel para pets</div><h3><img src="patinhas/icon-192.png" alt="">Patinhas</h3><p>Vagas por dia, vacinas em dia e relatório do dia com foto para o tutor.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card festeiro" data-p="festeiro" aria-haspopup="dialog">
+<div class="shot"><img src="img/festeiro.jpg" alt="Tela do Festeiro" loading="lazy"></div>
+<div class="body"><div class="who">Buffet infantil e salão</div><h3><img src="festeiro/icon-192.png" alt="">Festeiro</h3><p>Agenda por salão, proposta com total na hora, contrato e convite com lista de presença.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card vaivan" data-p="vaivan" aria-haspopup="dialog">
+<div class="shot"><img src="img/vaivan.jpg" alt="Tela do VaiVan" loading="lazy"></div>
+<div class="body"><div class="who">Transporte escolar</div><h3><img src="vaivan/icon-192.png" alt="">VaiVan</h3><p>Rota do motorista, aviso de embarque e chegada aos pais e mensalidade por Pix.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card caderneta" data-p="caderneta" aria-haspopup="dialog">
+<div class="shot"><img src="img/caderneta.jpg" alt="Tela do Caderneta" loading="lazy"></div>
+<div class="body"><div class="who">Loja de bairro</div><h3><img src="caderneta/icon-192.png" alt="">Caderneta</h3><p>O fiado no celular: quem deve, quanto, cobrança pronta no WhatsApp e extrato por link.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card chave" data-p="chave" aria-haspopup="dialog">
+<div class="shot"><img src="img/chave.jpg" alt="Tela do Chave na Mão" loading="lazy"></div>
+<div class="body"><div class="who">Imobiliárias pequenas</div><h3><img src="chave/icon-192.png" alt="">Chave na Mão</h3><p>Aluguéis, cobrança, reajuste, repasse ao proprietário e portal do inquilino.</p><span class="more">Ver detalhes →</span></div>
 </button>
 </div>
 </section>
@@ -171,7 +211,7 @@ dialog[open]::backdrop{animation:fade .32s ease}
 </form>
 </section>
 
-<footer>Os protótipos usam empresas, pessoas e valores fictícios, e as fotos deles foram geradas por IA. O que você fizer neles fica salvo só no seu aparelho. As páginas de demonstração do Marcaí são negócios de exemplo dentro do sistema no ar.</footer>
+<footer>Os protótipos usam negócios, pessoas e valores fictícios, e as fotos deles foram geradas por IA. O que você fizer neles fica salvo só no seu aparelho. As páginas de demonstração do Marcaí são negócios de exemplo dentro do sistema no ar.</footer>
 </div>
 
 <dialog id="m" aria-labelledby="mt"><div class="mh"><h2 id="mt"></h2><button type="button" class="x" id="mx" aria-label="Fechar">×</button></div><div class="mb" id="mb"></div></dialog>
@@ -179,29 +219,36 @@ dialog[open]::backdrop{animation:fade .32s ease}
 <script>
 (function(){
 var P={
-marcai:{a:"marcai",name:"Marcaí",tag:"No ar desde setembro de 2026",desc:"Plataforma de agendamentos e pedidos para pequenos negócios. Cada negócio ganha o próprio endereço, com a sua marca, seus serviços e a sua agenda. O cliente marca ou pede pelo celular, sem criar conta e sem baixar aplicativo.",
+marcai:{a:"marcai",ico:"https://marcaionline.com.br/app-icon-192.png",name:"Marcaí",tag:"No ar desde setembro de 2026",desc:"Plataforma de agendamentos e pedidos para pequenos negócios. Cada negócio ganha o próprio endereço, com a sua marca, seus serviços e a sua agenda. O cliente marca ou pede pelo celular, sem criar conta e sem baixar aplicativo.",
 shots:[["m_land","Site do Marcaí"],["m_salao","Agendamento · Salão Aurora"],["m_forno","Pedido · Forno & Afeto"]],
 feats:["Agenda que não deixa dois clientes pegarem o mesmo horário","Modo pedidos para confeitarias e lanchonetes","Orçamento com sinal, Pix e cobrança recorrente pelo Mercado Pago","Aviso na hora, confirmação no WhatsApp e números do mês no painel","Equipe com acesso próprio, clientes e avaliações"],
 stack:["Laravel 12","PHP 8.4","Vue 3","Inertia.js","Tailwind CSS 4","MySQL 8","Valkey","Laravel Reverb","Docker","890+ testes"],
 links:[["pri","https://marcaionline.com.br/","Abrir o site do Marcaí"],["sec","https://salao-aurora.marcaionline.com.br/","Demonstração: agendar no Salão Aurora"],["sec","https://forno-e-afeto.marcaionline.com.br/","Demonstração: pedir na Forno & Afeto"]]},
-polo:{a:"polo",name:"Polo Clima",tag:"Protótipo",desc:"Para empresas que vendem, instalam e fazem manutenção de ar-condicionado, cerca elétrica, câmeras e energia solar. Um catálogo único com estoque e preços alimenta a loja, os chamados e as ordens de serviço.",
+polo:{a:"polo",ico:"https://agabrielr.github.io/polo-clima/icon-192.png",name:"Polo Clima",tag:"Protótipo",desc:"Para empresas que vendem, instalam e fazem manutenção de ar-condicionado, cerca elétrica, câmeras e energia solar. Um catálogo único com estoque e preços alimenta a loja, os chamados e as ordens de serviço.",
 shots:[["polo","Início da empresa"]],
 feats:["Loja para o cliente com estoque e preço da empresa","Chamados pelo link, com foto, que viram ordem de serviço","OS com checklist, fotos e baixa automática no estoque","Equipe com agenda, nota dos clientes e comissão","Renda do mês, a receber e o que sobrou","Cliente acompanha o serviço pelo número da OS"],
 acc:"Entre como <code>admin</code>, <code>diego</code> ou <code>wesley</code>",
 links:[["pri","https://agabrielr.github.io/polo-clima/","Abrir o protótipo"],["sec","https://agabrielr.github.io/polo-clima/?loja","Ver a loja como cliente"],["sec","https://agabrielr.github.io/polo-clima/?os=2032","Acompanhar um serviço"]]},
-obra:{a:"obra",name:"ObraClara",tag:"Protótipo",desc:"Quem vai reformar descreve a obra e recebe propostas de mão de obra, sem um empreiteiro ver o preço do outro. Depois de contratar, acompanha a obra por etapas, com foto e pagamento de cada uma.",
+obra:{a:"obra",ico:"https://agabrielr.github.io/obraclara/icon-192.png",name:"ObraClara",tag:"Protótipo",desc:"Quem vai reformar descreve a obra e recebe propostas de mão de obra, sem um empreiteiro ver o preço do outro. Depois de contratar, acompanha a obra por etapas, com foto e pagamento de cada uma.",
 shots:[["obra","Obra do cliente"]],
 feats:["Propostas de vários empreiteiros, comparadas lado a lado","Pedido direto para um empreiteiro conhecido","O empreiteiro responde pelo link, sem cadastro","Contrato, etapas pagas uma a uma e diário com fotos","Abas do empreiteiro: em andamento, na região e para você"],
 acc:"Entre como <code>cliente</code> ou <code>silva</code> (empreiteiro)",
 links:[["pri","https://agabrielr.github.io/obraclara/","Abrir o protótipo"],["sec","https://agabrielr.github.io/obraclara/?pedido=d1","Ver um pedido como empreiteiro"]]},
-campo:{a:"campo",name:"Campo Certo",tag:"Protótipo",desc:"O dia a dia da fazenda de gado de corte no celular, pensado para quem não gosta de planilha: pastos e lotes, pesagem com a engorda calculada, diário com fotos e chuva, tarefas de vacina e o dinheiro do mês.",
+locafesta:{a:"locafesta",ico:"locafesta/icon-192.png",name:"Locafesta",tag:"Protótipo",desc:"Para quem aluga pula-pula, castelo inflável, mesas, tenda e som. O sistema sabe o que está livre em cada data, calcula o frete pelo bairro, manda o contrato e trava a data com o sinal por Pix. No dia, o entregador tem a rota em ordem.",shots:[["locafesta","Painel"],["locafesta_pub","Link do cliente"]],feats:["Disponibilidade de cada item por data", "Total com frete por bairro, na hora", "Contrato aceito pelo link e sinal por Pix", "Rota de entregas e retiradas do dia", "Acesso do entregador só com a rota"],acc:"Entre como <code>dono</code> ou <code>entregador</code>",links:[["pri", "https://agabrielr.github.io/locafesta/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/locafesta/?reserva=r2", "Ver a reserva como cliente"]]},
+apito:{a:"apito",ico:"apito/icon-192.png",name:"Apito",tag:"Protótipo",desc:"Para escolinhas de futsal, vôlei, natação e ballet. Turmas com vagas e professor, matrícula com aula experimental e desconto de irmão, chamada em dois toques e mensalidade que baixa sozinha quando o Pix cai.",shots:[["apito","Painel"],["apito_pub","Link do cliente"]],feats:["Chamada pelo celular, por turma", "Alerta de aluno com três faltas seguidas", "Mensalidade por Pix e cobrança pronta", "Portal do responsável com frequência e Pix", "Professor vê só as turmas dele"],acc:"Entre como <code>dono</code> ou <code>bruno</code> (professor)",links:[["pri", "https://agabrielr.github.io/apito/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/apito/?aluno=a4", "Ver o portal do responsável"]]},
+patinhas:{a:"patinhas",ico:"patinhas/icon-192.png",name:"Patinhas",tag:"Protótipo",desc:"Para creche, hotel e banho e tosa de pets. Ocupação por dia, ficha do pet com alergias e vacinas, check-in e check-out e um relatório do dia com foto, que vai para o tutor por WhatsApp.",shots:[["patinhas","Painel"],["patinhas_pub","Link do cliente"]],feats:["Vagas de creche e hotel por dia", "Vacina vencida bloqueia a reserva", "Relatório do dia com foto para o tutor", "Agenda de banho e tosa por porte", "Equipe sem acesso ao financeiro"],acc:"Entre como <code>dono</code> ou <code>equipe</code>",links:[["pri", "https://agabrielr.github.io/patinhas/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/patinhas/?pet=p1", "Ver o dia de um pet como tutor"]]},
+festeiro:{a:"festeiro",ico:"festeiro/icon-192.png",name:"Festeiro",tag:"Protótipo",desc:"Para buffet infantil e salão de festas, da proposta ao dia da festa. Agenda por salão e turno sem choque de horário, proposta com o total na hora, contrato com entrada e um portal para o anfitrião com convite digital e lista de presença.",shots:[["festeiro","Painel"],["festeiro_pub","Link do cliente"]],feats:["Agenda por salão e turno", "Proposta com pacote e adicionais", "Contrato e parcelas da festa", "Convite digital com confirmação de presença", "Ordem de serviço do dia para a equipe"],acc:"Entre como <code>dono</code> ou <code>equipe</code>",links:[["pri", "https://agabrielr.github.io/festeiro/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/festeiro/?festa=f1", "Ver o convite e a lista de presença"]]},
+vaivan:{a:"vaivan",ico:"vaivan/icon-192.png",name:"VaiVan",tag:"Protótipo",desc:"Para transporte escolar por van. O motorista segue a rota na ordem e marca quem embarcou ou faltou; os pais acompanham pelo link, recebem o aviso de embarque e de chegada e avisam falta. Mensalidades no mesmo lugar.",shots:[["vaivan","Painel"],["vaivan_pub","Link do cliente"]],feats:["Rota da manhã com paradas em ordem", "Embarque, falta e chegada na escola", "Pais acompanham e avisam falta pelo link", "Mensalidade por Pix e cobrança pronta", "Motorista vê só a rota"],acc:"Entre como <code>dono</code> ou <code>motorista</code>",links:[["pri", "https://agabrielr.github.io/vaivan/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/vaivan/?aluno=a4", "Acompanhar como pai ou mãe"]]},
+caderneta:{a:"caderneta",ico:"caderneta/icon-192.png",name:"Caderneta",tag:"Protótipo",desc:"A caderneta de fiado da loja de bairro, no celular. Lançar fiado em três toques, saber quem deve e quanto, avisar quando passa do limite e cobrar pelo WhatsApp com Pix. O cliente vê o próprio extrato por um link.",shots:[["caderneta","Painel"],["caderneta_pub","Link do cliente"]],feats:["Lançar fiado em três toques", "Quem deve, do vencido ao que vence depois", "Aviso de limite combinado", "Cobrança pronta com Pix no WhatsApp", "Extrato por link para o cliente"],acc:"Entre como <code>dono</code> ou <code>balcao</code>",links:[["pri", "https://agabrielr.github.io/caderneta/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/caderneta/?c=c1", "Ver o extrato como cliente"]]},
+chave:{a:"chave",ico:"chave/icon-192.png",name:"Chave na Mão",tag:"Protótipo",desc:"Para imobiliárias pequenas e corretores que administram aluguéis. Contratos com vencimento e reajuste, cobrança com baixa, repasse ao proprietário com a taxa calculada, vistoria com fotos e chamados de manutenção aprovados pelo dono.",shots:[["chave","Painel"],["chave_pub","Link do cliente"]],feats:["Carteira com atrasos e reajustes do mês", "Repasse calculado por proprietário", "Vistoria de entrada com fotos", "Chamado de manutenção pelo inquilino", "Proprietário vê só os imóveis dele"],acc:"Entre como <code>imob</code> ou <code>aurelio</code> (proprietário)",links:[["pri", "https://agabrielr.github.io/chave/", "Abrir o protótipo"], ["sec", "https://agabrielr.github.io/chave/?contrato=k3", "Ver o portal do inquilino"]]},
+campo:{a:"campo",ico:"https://agabrielr.github.io/campo-certo/icon-192.png",name:"Campo Certo",tag:"Protótipo",desc:"O dia a dia da fazenda de gado de corte no celular, pensado para quem não gosta de planilha: pastos e lotes, pesagem com a engorda calculada, diário com fotos e chuva, tarefas de vacina e o dinheiro do mês.",
 shots:[["campo","Início do dono"]],
 feats:["Pesagem que calcula a média e o ganho por dia","Movimentação do gado em dois toques","Diário com fotos e registro de chuva","Capataz lança tudo, mas não vê o dinheiro","Ficha do lote para mandar ao comprador"],
 acc:"Entre como <code>dono</code> ou <code>capataz</code>",
 links:[["pri","https://agabrielr.github.io/campo-certo/","Abrir o protótipo"],["sec","https://agabrielr.github.io/campo-certo/?lote=4","Ver a ficha de um lote"]]}};
 var d=document.getElementById("m"),mb=document.getElementById("mb"),mt=document.getElementById("mt"),last=null;
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function open(k,from){var p=P[k];if(!p)return;last=from||null;d.style.setProperty("--a","var(--"+p.a+")");mt.textContent=p.name;
+function open(k,from){var p=P[k];if(!p)return;last=from||null;d.style.setProperty("--a","var(--"+p.a+")");mt.innerHTML=(p.ico?'<img src="'+p.ico+'" alt="">':'')+esc(p.name);
 mb.innerHTML='<span class="'+(k==="marcai"?"live":"stack")+'">'+(k==="marcai"?esc(p.tag):'<span>'+esc(p.tag)+'</span>')+'</span><p style="margin:0">'+esc(p.desc)+'</p>'+
 '<div class="gal">'+p.shots.map(function(s){return '<figure><img src="img/'+s[0]+'.jpg" alt="'+esc(s[1])+'"><figcaption>'+esc(s[1])+'</figcaption></figure>'}).join("")+'</div>'+
 '<ul>'+p.feats.map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>'+
