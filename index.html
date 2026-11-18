@@ -24,6 +24,7 @@ img{max-width:100%;display:block}
 .wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
 header h1{font:700 clamp(30px,6vw,46px)/1.05 var(--fd);letter-spacing:-.02em;margin:0;text-wrap:balance}
 header p{color:var(--muted);font-size:17px;max-width:60ch;margin:14px 0 0}
+header p.eye{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
 .how{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .how span{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:500}
 .grid{display:grid;grid-template-columns:1fr;gap:20px}
@@ -46,14 +47,35 @@ ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-si
 .btn.sec{border:1.5px solid var(--a);color:var(--a)}
 .btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
 footer{color:var(--muted);font-size:14px;max-width:70ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 20px;border-radius:12px;font:600 16px var(--fb);text-decoration:none}
+.cta .go{background:var(--fg);color:var(--bg)}
+.cta .soft{border:1.5px solid var(--line);color:var(--fg);background:var(--surface)}
+.cta a:focus-visible,.idea a:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.idea{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 20px;display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:860px){.idea{grid-template-columns:1fr 1.2fr;padding:32px}}
+.idea h2{font:700 28px var(--fd);margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+.idea p{margin:0;color:var(--muted)}
+.idea form{display:flex;flex-direction:column;gap:14px;min-width:0}
+.idea label{display:block;font-weight:600;font-size:15px;margin-bottom:-6px}
+.idea label span{font-weight:400;color:var(--muted);font-size:13.5px}
+.idea input,.idea textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.idea textarea{min-height:110px;resize:vertical}
+.idea input:focus-visible,.idea textarea:focus-visible{outline:2px solid var(--fg);outline-offset:1px}
+.send{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 20px;border-radius:12px;background:#1f8a4c;color:#fff;font:600 16px var(--fb);text-decoration:none}
+.err{color:#b42e28;font-size:14px;margin:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#f08a84}}
+:root[data-theme="dark"] .err{color:#f08a84}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
+<p class="eye">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</p>
 <h1>Três protótipos para testar</h1>
 <p>Ideias de sistemas para negócios daqui da região. Cada um abre no celular, sem instalar nada, e já vem com dados de exemplo para você mexer à vontade.</p>
 <div class="how"><span>Abre no navegador do celular</span><span>Senha de teste: demo</span><span>Dá para instalar como aplicativo</span></div>
+<div class="cta"><a class="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seus%20prot%C3%B3tipos%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir um orçamento</a><a class="soft" href="#ideia">Tenho uma ideia</a></div>
 </header>
 <main class="grid">
 <article class="card">
@@ -90,7 +112,26 @@ footer{color:var(--muted);font-size:14px;max-width:70ch}
 </div>
 </article>
 </main>
+<section class="idea" id="ideia" aria-labelledby="ideia-t">
+<div><h2 id="ideia-t">Tem uma ideia? Me conta</h2><p>Um sistema para o seu negócio, um aplicativo para a sua equipe ou algo que você faz no caderno e queria no celular. Escreva do seu jeito: a mensagem vai direto para o meu WhatsApp e eu respondo por lá.</p></div>
+<form id="f" novalidate>
+<label for="n">Seu nome</label><input id="n" autocomplete="name" placeholder="Ex.: Carla">
+<label for="b">O que você faz <span>(opcional)</span></label><input id="b" placeholder="Ex.: tenho uma oficina mecânica">
+<label for="i">Qual é a ideia?</label><textarea id="i" placeholder="Ex.: queria que o cliente acompanhasse o conserto do carro pelo celular."></textarea>
+<p class="err" id="e" hidden>Escreva a ideia em uma frase, pelo menos.</p>
+<a class="send" id="s" href="https://wa.me/5567996605633" target="_blank" rel="noopener">Mandar pelo WhatsApp</a>
+</form>
+</section>
 <footer>São protótipos de demonstração: as empresas, pessoas e valores são fictícios e as fotos foram geradas por IA. O que você fizer fica salvo só no seu aparelho, e dá para recomeçar pelo menu de cada um.</footer>
 </div>
+<script>
+(function(){var n=document.getElementById("n"),b=document.getElementById("b"),i=document.getElementById("i"),s=document.getElementById("s"),e=document.getElementById("e");
+function msg(){var t="Olá, Antônio! ",nm=n.value.trim(),bz=b.value.trim();if(nm)t+="Sou "+nm+(bz?", "+bz:"")+". ";else if(bz)t+="Eu "+bz+". ";return t+"Tenho uma ideia: "+i.value.trim()}
+function upd(){s.href="https://wa.me/5567996605633?text="+encodeURIComponent(msg());if(i.value.trim())e.hidden=true}
+[n,b,i].forEach(function(x){x.addEventListener("input",upd)});
+s.addEventListener("click",function(ev){if(i.value.trim().length<5){ev.preventDefault();e.hidden=false;i.focus()}});
+document.getElementById("f").addEventListener("submit",function(ev){ev.preventDefault()});
+upd()})();
+</script>
 </body>
 </html>
