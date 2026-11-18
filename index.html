@@ -3,55 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Protótipos para testar</title>
-<meta name="description" content="Três protótipos de sistemas para negócios locais: serviços de clima e segurança, reforma de casa e fazenda de gado.">
-<meta name="robots" content="noindex">
+<title>Antônio Gabriel · Portfólio</title>
+<meta name="description" content="Sistemas web para negócios: o Marcaí no ar e protótipos para serviços, reforma e fazenda.">
 <meta name="theme-color" content="#f5f4f0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-:root{--bg:#f5f4f0;--surface:#ffffff;--fg:#17191c;--muted:#5d636b;--line:#e3e1da;--chip:#ecebe5;
---polo:#0369a1;--polo-soft:#e0f2fe;--obra:#4338ca;--obra-soft:#e0e7ff;--campo:#4d7c0f;--campo-soft:#ecfccb;
+:root{--bg:#f5f4f0;--surface:#ffffff;--fg:#17191c;--muted:#5d636b;--line:#e3e1da;--chip:#ecebe5;--live:#0f8a5f;--live-soft:#dcf4ea;
+--marcai:#0e9f8a;--marcai-soft:#d9f3ee;--polo:#0369a1;--polo-soft:#e0f2fe;--obra:#4338ca;--obra-soft:#e0e7ff;--campo:#4d7c0f;--campo-soft:#ecfccb;--wa:#1f8a4c;--err:#b42e28;
 --fd:'Space Grotesk',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;
---polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;
---polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;--live:#4fd1a0;--live-soft:#12352a;
+--marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--err:#f08a84;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;--live:#4fd1a0;--live-soft:#12352a;
+--marcai:#4fd1c0;--marcai-soft:#10322d;--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;--err:#f08a84;color-scheme:dark}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--fb);padding-block:max(28px,env(safe-area-inset-top,0px)) 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 img{max-width:100%;display:block}
-.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
-header h1{font:700 clamp(30px,6vw,46px)/1.05 var(--fd);letter-spacing:-.02em;margin:0;text-wrap:balance}
-header p{color:var(--muted);font-size:17px;max-width:60ch;margin:14px 0 0}
-header p.eye{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
-.how{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.how span{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:500}
-.grid{display:grid;grid-template-columns:1fr;gap:20px}
-@media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
-.card{--a:var(--polo);--s:var(--polo-soft);background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
-.card.obra{--a:var(--obra);--s:var(--obra-soft)}
-.card.campo{--a:var(--campo);--s:var(--campo-soft)}
-.shot{background:var(--s);padding:22px 22px 0;display:flex;justify-content:center}
-.shot img{width:min(100%,260px);border-radius:18px 18px 0 0;box-shadow:0 10px 30px rgba(0,0,0,.18);aspect-ratio:520/1013;object-fit:cover;object-position:top}
-.body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
-.body h2{font:700 25px var(--fd);margin:0;color:var(--a);letter-spacing:-.01em}
-.who{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.body p{margin:0;color:var(--fg)}
-ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:15px}
-.acc{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
-.acc code{font:600 13.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fg);background:var(--chip);padding:1px 6px;border-radius:6px}
-.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
-.btn{flex:1 1 150px;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 16px;border-radius:12px;font:600 16px var(--fb);text-decoration:none;text-align:center}
-.btn.pri{background:var(--a);color:var(--surface)}
-.btn.sec{border:1.5px solid var(--a);color:var(--a)}
-.btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
-footer{color:var(--muted);font-size:14px;max-width:70ch}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+header .eye{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+header h1{font:700 clamp(30px,6vw,46px)/1.05 var(--fd);letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:20ch}
+header p.lead{color:var(--muted);font-size:17px;max-width:60ch;margin:14px 0 0}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .cta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 20px;border-radius:12px;font:600 16px var(--fb);text-decoration:none}
 .cta .go{background:var(--fg);color:var(--bg)}
 .cta .soft{border:1.5px solid var(--line);color:var(--fg);background:var(--surface)}
-.cta a:focus-visible,.idea a:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+section>h2{font:700 24px var(--fd);margin:0 0 6px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+section>p.sub{margin:0 0 18px;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--live);box-shadow:0 0 0 4px var(--live-soft);flex:none}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:760px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+.card{--a:var(--polo);--s:var(--polo-soft);background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0;text-align:left;padding:0;color:var(--fg);font:inherit;cursor:pointer;width:100%}
+.card:hover{border-color:var(--a)}
+.card:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.card.marcai{--a:var(--marcai);--s:var(--marcai-soft)}
+.card.obra{--a:var(--obra);--s:var(--obra-soft)}
+.card.campo{--a:var(--campo);--s:var(--campo-soft)}
+.shot{background:var(--s);padding:20px 20px 0;display:flex;justify-content:center;gap:12px;overflow:hidden}
+.shot img{width:min(100%,240px);border-radius:16px 16px 0 0;box-shadow:0 10px 30px rgba(0,0,0,.18);aspect-ratio:520/760;object-fit:cover;object-position:top}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.who{font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.body h3{font:700 24px var(--fd);margin:0;color:var(--a);letter-spacing:-.01em}
+.body p{margin:0}
+.more{margin-top:auto;padding-top:8px;font-weight:600;color:var(--a);display:inline-flex;align-items:center;gap:6px}
+.card.wide .shot img{width:min(30%,220px)}
+@media (min-width:760px){.card.wide{flex-direction:row}.card.wide .shot{flex:1.3;padding:26px 26px 0;align-items:flex-end}.card.wide .body{flex:1;padding:28px;justify-content:center}}
+@media (max-width:759px){.card.wide .shot img:nth-child(n+2){display:none}.card.wide .shot img{width:min(100%,240px)}}
+.live{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:var(--live-soft);color:var(--live);font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px}
+dialog{border:0;padding:0;border-radius:20px;width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 32px);background:var(--surface);color:var(--fg);box-shadow:0 24px 70px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,12,14,.55)}
+.mh{position:sticky;top:0;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);z-index:1}
+.mh h2{font:700 24px var(--fd);margin:0;color:var(--a)}
+.x{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font-size:22px;cursor:pointer;flex:none}
+.x:focus-visible,.mb a:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.mb{padding:18px;display:flex;flex-direction:column;gap:14px}
+.gal{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory}
+.gal figure{margin:0;flex:0 0 min(62%,220px);scroll-snap-align:start}
+.gal img{border-radius:12px;border:1px solid var(--line);aspect-ratio:520/760;object-fit:cover;object-position:top;width:100%}
+.gal figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.mb ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:500}
+.acc{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
+.acc code{font:600 13.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fg);background:var(--chip);padding:1px 6px;border-radius:6px}
+.links{display:flex;flex-direction:column;gap:8px}
+.links a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 16px;border-radius:12px;font:600 16px var(--fb);text-decoration:none;text-align:center}
+.links a.pri{background:var(--a);color:var(--surface)}
+.links a.sec{border:1.5px solid var(--a);color:var(--a)}
 .idea{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 20px;display:grid;grid-template-columns:1fr;gap:20px}
 @media (min-width:860px){.idea{grid-template-columns:1fr 1.2fr;padding:32px}}
 .idea h2{font:700 28px var(--fd);margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
@@ -61,57 +79,51 @@ footer{color:var(--muted);font-size:14px;max-width:70ch}
 .idea label span{font-weight:400;color:var(--muted);font-size:13.5px}
 .idea input,.idea textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
 .idea textarea{min-height:110px;resize:vertical}
-.idea input:focus-visible,.idea textarea:focus-visible{outline:2px solid var(--fg);outline-offset:1px}
-.send{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 20px;border-radius:12px;background:#1f8a4c;color:#fff;font:600 16px var(--fb);text-decoration:none}
-.err{color:#b42e28;font-size:14px;margin:0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#f08a84}}
-:root[data-theme="dark"] .err{color:#f08a84}
+.idea input:focus-visible,.idea textarea:focus-visible,.cta a:focus-visible,.send:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.send{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 20px;border-radius:12px;background:var(--wa);color:#fff;font:600 16px var(--fb);text-decoration:none}
+.err{color:var(--err);font-size:14px;margin:0}
+footer{color:var(--muted);font-size:14px;max-width:70ch}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
 <p class="eye">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</p>
-<h1>Três protótipos para testar</h1>
-<p>Ideias de sistemas para negócios daqui da região. Cada um abre no celular, sem instalar nada, e já vem com dados de exemplo para você mexer à vontade.</p>
-<div class="how"><span>Abre no navegador do celular</span><span>Senha de teste: demo</span><span>Dá para instalar como aplicativo</span></div>
-<div class="cta"><a class="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seus%20prot%C3%B3tipos%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir um orçamento</a><a class="soft" href="#ideia">Tenho uma ideia</a></div>
+<h1>Sistemas web para o dia a dia de negócios de verdade</h1>
+<p class="lead">Agenda, pedidos, ordens de serviço, estoque e cobrança, pensados para usar no celular. Um produto no ar e protótipos para você abrir e testar agora.</p>
+<div class="cta"><a class="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir um orçamento</a><a class="soft" href="#ideia">Tenho uma ideia</a></div>
 </header>
-<main class="grid">
-<article class="card">
-<div class="shot"><img src="img/polo.jpg" alt="Tela inicial do Polo Clima com chamados, ordens de serviço e estoque" loading="lazy"></div>
-<div class="body">
-<div class="who">Ar-condicionado, cerca elétrica, câmeras e solar</div>
-<h2>Polo Clima</h2>
-<p>Para quem vende, instala e faz manutenção. Loja com o próprio estoque e preço, chamados pelo link e ordens de serviço que dão baixa no estoque.</p>
-<ul><li>Agenda e OS da equipe, com checklist e fotos</li><li>Renda do mês, a receber e comissão de cada técnico</li><li>Cliente acompanha o serviço sem criar conta</li></ul>
-<div class="acc">Entre como <code>admin</code>, <code>diego</code> ou <code>wesley</code></div>
-<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/polo-clima/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/polo-clima/?loja">Ver a loja</a></div>
+
+<section aria-labelledby="s-live">
+<h2 id="s-live"><span class="dot" aria-hidden="true"></span>Projetos no ar</h2>
+<p class="sub">Em uso de verdade, com negócios cadastrados.</p>
+<div class="grid">
+<button type="button" class="card marcai wide" data-p="marcai" aria-haspopup="dialog">
+<div class="shot"><img src="img/m_land.jpg" alt="Página inicial do Marcaí" loading="lazy"><img src="img/m_salao.jpg" alt="Agendamento no Salão Aurora pelo Marcaí" loading="lazy"><img src="img/m_forno.jpg" alt="Pedido na Forno &amp; Afeto pelo Marcaí" loading="lazy"></div>
+<div class="body"><span class="live">No ar desde setembro de 2026</span><div class="who">Barbearias, salões, arenas e confeitarias</div><h3>Marcaí</h3><p>Agenda online e pedidos para pequenos negócios. Cada negócio ganha a própria página, e o cliente marca ou pede pelo celular, sem criar conta.</p><span class="more">Ver detalhes e demonstração →</span></div>
+</button>
 </div>
-</article>
-<article class="card obra">
-<div class="shot"><img src="img/obra.jpg" alt="Obra de banheiro no ObraClara, com etapas pagas e fotos para aprovar" loading="lazy"></div>
-<div class="body">
-<div class="who">Reforma e construção</div>
-<h2>ObraClara</h2>
-<p>Quem vai reformar recebe propostas de mão de obra, sem um empreiteiro ver o preço do outro, e acompanha a obra por etapas, com foto e pagamento de cada uma.</p>
-<ul><li>Pedido de orçamento direto para um empreiteiro conhecido</li><li>O empreiteiro responde pelo link, sem cadastro</li><li>Contrato, diário da obra e avaliação</li></ul>
-<div class="acc">Entre como <code>cliente</code> ou <code>silva</code> (empreiteiro)</div>
-<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/obraclara/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/obraclara/?pedido=d1">Ver um pedido</a></div>
+</section>
+
+<section aria-labelledby="s-demo">
+<h2 id="s-demo">Projetos em demonstração e desenvolvimento</h2>
+<p class="sub">Protótipos que funcionam no celular, com dados de exemplo e login de teste. A senha de todos é <b>demo</b>.</p>
+<div class="grid three">
+<button type="button" class="card" data-p="polo" aria-haspopup="dialog">
+<div class="shot"><img src="img/polo.jpg" alt="Tela inicial do Polo Clima" loading="lazy"></div>
+<div class="body"><div class="who">Clima, segurança e solar</div><h3>Polo Clima</h3><p>Loja com estoque próprio, chamados pelo link e ordens de serviço da equipe.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card obra" data-p="obra" aria-haspopup="dialog">
+<div class="shot"><img src="img/obra.jpg" alt="Obra de banheiro no ObraClara" loading="lazy"></div>
+<div class="body"><div class="who">Reforma e construção</div><h3>ObraClara</h3><p>Propostas de mão de obra e acompanhamento da obra por etapas, com foto e pagamento.</p><span class="more">Ver detalhes →</span></div>
+</button>
+<button type="button" class="card campo" data-p="campo" aria-haspopup="dialog">
+<div class="shot"><img src="img/campo.jpg" alt="Painel do Campo Certo" loading="lazy"></div>
+<div class="body"><div class="who">Fazenda de gado de corte</div><h3>Campo Certo</h3><p>Pastos, pesagem com a engorda calculada, diário e o dinheiro do mês.</p><span class="more">Ver detalhes →</span></div>
+</button>
 </div>
-</article>
-<article class="card campo">
-<div class="shot"><img src="img/campo.jpg" alt="Painel do Campo Certo com cabeças, ganho médio e saldo do mês" loading="lazy"></div>
-<div class="body">
-<div class="who">Fazenda de gado de corte</div>
-<h2>Campo Certo</h2>
-<p>O dia a dia da fazenda no celular: pastos e lotes, pesagem com a engorda calculada, diário com fotos e chuva, tarefas de vacina e o dinheiro do mês.</p>
-<ul><li>Capataz lança tudo, mas não vê o dinheiro</li><li>Movimentação do gado em dois toques</li><li>Ficha do lote para mandar ao comprador</li></ul>
-<div class="acc">Entre como <code>dono</code> ou <code>capataz</code></div>
-<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/campo-certo/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/campo-certo/?lote=4">Ver a ficha de um lote</a></div>
-</div>
-</article>
-</main>
+</section>
+
 <section class="idea" id="ideia" aria-labelledby="ideia-t">
 <div><h2 id="ideia-t">Tem uma ideia? Me conta</h2><p>Um sistema para o seu negócio, um aplicativo para a sua equipe ou algo que você faz no caderno e queria no celular. Escreva do seu jeito: a mensagem vai direto para o meu WhatsApp e eu respondo por lá.</p></div>
 <form id="f" novalidate>
@@ -122,13 +134,55 @@ footer{color:var(--muted);font-size:14px;max-width:70ch}
 <a class="send" id="s" href="https://wa.me/5567996605633" target="_blank" rel="noopener">Mandar pelo WhatsApp</a>
 </form>
 </section>
-<footer>São protótipos de demonstração: as empresas, pessoas e valores são fictícios e as fotos foram geradas por IA. O que você fizer fica salvo só no seu aparelho, e dá para recomeçar pelo menu de cada um.</footer>
+
+<footer>Os protótipos usam empresas, pessoas e valores fictícios, e as fotos deles foram geradas por IA. O que você fizer neles fica salvo só no seu aparelho. As páginas de demonstração do Marcaí são negócios de exemplo dentro do sistema no ar.</footer>
 </div>
+
+<dialog id="m" aria-labelledby="mt"><div class="mh"><h2 id="mt"></h2><button type="button" class="x" id="mx" aria-label="Fechar">×</button></div><div class="mb" id="mb"></div></dialog>
+
 <script>
-(function(){var n=document.getElementById("n"),b=document.getElementById("b"),i=document.getElementById("i"),s=document.getElementById("s"),e=document.getElementById("e");
-function msg(){var t="Olá, Antônio! ",nm=n.value.trim(),bz=b.value.trim();if(nm)t+="Sou "+nm+(bz?", "+bz:"")+". ";else if(bz)t+="Eu "+bz+". ";return t+"Tenho uma ideia: "+i.value.trim()}
+(function(){
+var P={
+marcai:{a:"marcai",name:"Marcaí",tag:"No ar desde setembro de 2026",desc:"Plataforma de agendamentos e pedidos para pequenos negócios. Cada negócio ganha o próprio endereço, com a sua marca, seus serviços e a sua agenda. O cliente marca ou pede pelo celular, sem criar conta e sem baixar aplicativo.",
+shots:[["m_land","Site do Marcaí"],["m_salao","Agendamento · Salão Aurora"],["m_forno","Pedido · Forno & Afeto"]],
+feats:["Agenda que não deixa dois clientes pegarem o mesmo horário","Modo pedidos para confeitarias e lanchonetes","Orçamento com sinal, Pix e cobrança recorrente pelo Mercado Pago","Aviso na hora, confirmação no WhatsApp e números do mês no painel","Equipe com acesso próprio, clientes e avaliações"],
+stack:["Laravel 12","PHP 8.4","Vue 3","Inertia.js","Tailwind CSS 4","MySQL 8","Valkey","Laravel Reverb","Docker","890+ testes"],
+links:[["pri","https://marcaionline.com.br/","Abrir o site do Marcaí"],["sec","https://salao-aurora.marcaionline.com.br/","Demonstração: agendar no Salão Aurora"],["sec","https://forno-e-afeto.marcaionline.com.br/","Demonstração: pedir na Forno & Afeto"]]},
+polo:{a:"polo",name:"Polo Clima",tag:"Protótipo",desc:"Para empresas que vendem, instalam e fazem manutenção de ar-condicionado, cerca elétrica, câmeras e energia solar. Um catálogo único com estoque e preços alimenta a loja, os chamados e as ordens de serviço.",
+shots:[["polo","Início da empresa"]],
+feats:["Loja para o cliente com estoque e preço da empresa","Chamados pelo link, com foto, que viram ordem de serviço","OS com checklist, fotos e baixa automática no estoque","Equipe com agenda, nota dos clientes e comissão","Renda do mês, a receber e o que sobrou","Cliente acompanha o serviço pelo número da OS"],
+acc:"Entre como <code>admin</code>, <code>diego</code> ou <code>wesley</code>",
+links:[["pri","https://agabrielr.github.io/polo-clima/","Abrir o protótipo"],["sec","https://agabrielr.github.io/polo-clima/?loja","Ver a loja como cliente"],["sec","https://agabrielr.github.io/polo-clima/?os=2032","Acompanhar um serviço"]]},
+obra:{a:"obra",name:"ObraClara",tag:"Protótipo",desc:"Quem vai reformar descreve a obra e recebe propostas de mão de obra, sem um empreiteiro ver o preço do outro. Depois de contratar, acompanha a obra por etapas, com foto e pagamento de cada uma.",
+shots:[["obra","Obra do cliente"]],
+feats:["Propostas de vários empreiteiros, comparadas lado a lado","Pedido direto para um empreiteiro conhecido","O empreiteiro responde pelo link, sem cadastro","Contrato, etapas pagas uma a uma e diário com fotos","Abas do empreiteiro: em andamento, na região e para você"],
+acc:"Entre como <code>cliente</code> ou <code>silva</code> (empreiteiro)",
+links:[["pri","https://agabrielr.github.io/obraclara/","Abrir o protótipo"],["sec","https://agabrielr.github.io/obraclara/?pedido=d1","Ver um pedido como empreiteiro"]]},
+campo:{a:"campo",name:"Campo Certo",tag:"Protótipo",desc:"O dia a dia da fazenda de gado de corte no celular, pensado para quem não gosta de planilha: pastos e lotes, pesagem com a engorda calculada, diário com fotos e chuva, tarefas de vacina e o dinheiro do mês.",
+shots:[["campo","Início do dono"]],
+feats:["Pesagem que calcula a média e o ganho por dia","Movimentação do gado em dois toques","Diário com fotos e registro de chuva","Capataz lança tudo, mas não vê o dinheiro","Ficha do lote para mandar ao comprador"],
+acc:"Entre como <code>dono</code> ou <code>capataz</code>",
+links:[["pri","https://agabrielr.github.io/campo-certo/","Abrir o protótipo"],["sec","https://agabrielr.github.io/campo-certo/?lote=4","Ver a ficha de um lote"]]}};
+var d=document.getElementById("m"),mb=document.getElementById("mb"),mt=document.getElementById("mt"),last=null;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function open(k,from){var p=P[k];if(!p)return;last=from||null;d.style.setProperty("--a","var(--"+p.a+")");mt.textContent=p.name;
+mb.innerHTML='<span class="'+(k==="marcai"?"live":"stack")+'">'+(k==="marcai"?esc(p.tag):'<span>'+esc(p.tag)+'</span>')+'</span><p style="margin:0">'+esc(p.desc)+'</p>'+
+'<div class="gal">'+p.shots.map(function(s){return '<figure><img src="img/'+s[0]+'.jpg" alt="'+esc(s[1])+'"><figcaption>'+esc(s[1])+'</figcaption></figure>'}).join("")+'</div>'+
+'<ul>'+p.feats.map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>'+
+(p.stack?'<div class="stack">'+p.stack.map(function(s){return '<span>'+esc(s)+'</span>'}).join("")+'</div>':'')+
+(p.acc?'<div class="acc">'+p.acc+'. A senha é <code>demo</code>.</div>':'')+
+'<div class="links">'+p.links.map(function(l){return '<a class="'+l[0]+'" href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[2])+'</a>'}).join("")+'</div>';
+if(!d.open)d.showModal();mb.scrollTop=0;d.scrollTop=0;try{history.replaceState(null,"","#"+k)}catch(e){}}
+function close(){if(d.open)d.close()}
+d.addEventListener("close",function(){try{history.replaceState(null,"",location.pathname)}catch(e){}if(last)last.focus()});
+d.addEventListener("click",function(e){if(e.target===d)close()});
+document.getElementById("mx").addEventListener("click",close);
+document.querySelectorAll("[data-p]").forEach(function(b){b.addEventListener("click",function(){open(b.dataset.p,b)})});
+var h=location.hash.slice(1);if(P[h])open(h,document.querySelector('[data-p="'+h+'"]'));
+var n=document.getElementById("n"),bz=document.getElementById("b"),i=document.getElementById("i"),s=document.getElementById("s"),e=document.getElementById("e");
+function msg(){var t="Olá, Antônio! ",nm=n.value.trim(),z=bz.value.trim();if(nm)t+="Sou "+nm+(z?", "+z:"")+". ";else if(z)t+="Eu "+z+". ";return t+"Tenho uma ideia: "+i.value.trim()}
 function upd(){s.href="https://wa.me/5567996605633?text="+encodeURIComponent(msg());if(i.value.trim())e.hidden=true}
-[n,b,i].forEach(function(x){x.addEventListener("input",upd)});
+[n,bz,i].forEach(function(x){x.addEventListener("input",upd)});
 s.addEventListener("click",function(ev){if(i.value.trim().length<5){ev.preventDefault();e.hidden=false;i.focus()}});
 document.getElementById("f").addEventListener("submit",function(ev){ev.preventDefault()});
 upd()})();
