@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Protótipos para testar</title>
+<meta name="description" content="Três protótipos de sistemas para negócios locais: serviços de clima e segurança, reforma de casa e fazenda de gado.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f5f4f0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--bg:#f5f4f0;--surface:#ffffff;--fg:#17191c;--muted:#5d636b;--line:#e3e1da;--chip:#ecebe5;
+--polo:#0369a1;--polo-soft:#e0f2fe;--obra:#4338ca;--obra-soft:#e0e7ff;--campo:#4d7c0f;--campo-soft:#ecfccb;
+--fd:'Space Grotesk',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;
+--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111316;--surface:#1a1d21;--fg:#eef0f3;--muted:#a2a8b1;--line:#2b2f35;--chip:#252930;
+--polo:#7dd3fc;--polo-soft:#0c2a3d;--obra:#a5b4fc;--obra-soft:#232552;--campo:#a3e635;--campo-soft:#26360f;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--fb);padding-block:max(28px,env(safe-area-inset-top,0px)) 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+header h1{font:700 clamp(30px,6vw,46px)/1.05 var(--fd);letter-spacing:-.02em;margin:0;text-wrap:balance}
+header p{color:var(--muted);font-size:17px;max-width:60ch;margin:14px 0 0}
+.how{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.how span{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:500}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{--a:var(--polo);--s:var(--polo-soft);background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card.obra{--a:var(--obra);--s:var(--obra-soft)}
+.card.campo{--a:var(--campo);--s:var(--campo-soft)}
+.shot{background:var(--s);padding:22px 22px 0;display:flex;justify-content:center}
+.shot img{width:min(100%,260px);border-radius:18px 18px 0 0;box-shadow:0 10px 30px rgba(0,0,0,.18);aspect-ratio:520/1013;object-fit:cover;object-position:top}
+.body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.body h2{font:700 25px var(--fd);margin:0;color:var(--a);letter-spacing:-.01em}
+.who{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.body p{margin:0;color:var(--fg)}
+ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:15px}
+.acc{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
+.acc code{font:600 13.5px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fg);background:var(--chip);padding:1px 6px;border-radius:6px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.btn{flex:1 1 150px;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 16px;border-radius:12px;font:600 16px var(--fb);text-decoration:none;text-align:center}
+.btn.pri{background:var(--a);color:var(--surface)}
+.btn.sec{border:1.5px solid var(--a);color:var(--a)}
+.btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+footer{color:var(--muted);font-size:14px;max-width:70ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Três protótipos para testar</h1>
+<p>Ideias de sistemas para negócios daqui da região. Cada um abre no celular, sem instalar nada, e já vem com dados de exemplo para você mexer à vontade.</p>
+<div class="how"><span>Abre no navegador do celular</span><span>Senha de teste: demo</span><span>Dá para instalar como aplicativo</span></div>
+</header>
+<main class="grid">
+<article class="card">
+<div class="shot"><img src="img/polo.jpg" alt="Tela inicial do Polo Clima com chamados, ordens de serviço e estoque" loading="lazy"></div>
+<div class="body">
+<div class="who">Ar-condicionado, cerca elétrica, câmeras e solar</div>
+<h2>Polo Clima</h2>
+<p>Para quem vende, instala e faz manutenção. Loja com o próprio estoque e preço, chamados pelo link e ordens de serviço que dão baixa no estoque.</p>
+<ul><li>Agenda e OS da equipe, com checklist e fotos</li><li>Renda do mês, a receber e comissão de cada técnico</li><li>Cliente acompanha o serviço sem criar conta</li></ul>
+<div class="acc">Entre como <code>admin</code>, <code>diego</code> ou <code>wesley</code></div>
+<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/polo-clima/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/polo-clima/?loja">Ver a loja</a></div>
+</div>
+</article>
+<article class="card obra">
+<div class="shot"><img src="img/obra.jpg" alt="Obra de banheiro no ObraClara, com etapas pagas e fotos para aprovar" loading="lazy"></div>
+<div class="body">
+<div class="who">Reforma e construção</div>
+<h2>ObraClara</h2>
+<p>Quem vai reformar recebe propostas de mão de obra, sem um empreiteiro ver o preço do outro, e acompanha a obra por etapas, com foto e pagamento de cada uma.</p>
+<ul><li>Pedido de orçamento direto para um empreiteiro conhecido</li><li>O empreiteiro responde pelo link, sem cadastro</li><li>Contrato, diário da obra e avaliação</li></ul>
+<div class="acc">Entre como <code>cliente</code> ou <code>silva</code> (empreiteiro)</div>
+<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/obraclara/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/obraclara/?pedido=d1">Ver um pedido</a></div>
+</div>
+</article>
+<article class="card campo">
+<div class="shot"><img src="img/campo.jpg" alt="Painel do Campo Certo com cabeças, ganho médio e saldo do mês" loading="lazy"></div>
+<div class="body">
+<div class="who">Fazenda de gado de corte</div>
+<h2>Campo Certo</h2>
+<p>O dia a dia da fazenda no celular: pastos e lotes, pesagem com a engorda calculada, diário com fotos e chuva, tarefas de vacina e o dinheiro do mês.</p>
+<ul><li>Capataz lança tudo, mas não vê o dinheiro</li><li>Movimentação do gado em dois toques</li><li>Ficha do lote para mandar ao comprador</li></ul>
+<div class="acc">Entre como <code>dono</code> ou <code>capataz</code></div>
+<div class="btns"><a class="btn pri" href="https://agabrielr.github.io/campo-certo/">Abrir</a><a class="btn sec" href="https://agabrielr.github.io/campo-certo/?lote=4">Ver a ficha de um lote</a></div>
+</div>
+</article>
+</main>
+<footer>São protótipos de demonstração: as empresas, pessoas e valores são fictícios e as fotos foram geradas por IA. O que você fizer fica salvo só no seu aparelho, e dá para recomeçar pelo menu de cada um.</footer>
+</div>
+</body>
+</html>
