@@ -28,6 +28,10 @@ header .eye{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:u
 header .eye img{border-radius:8px;flex:none}
 header h1{font:700 clamp(30px,6vw,46px)/1.05 var(--fd);letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:20ch}
 header p.lead{color:var(--muted);font-size:17px;max-width:60ch;margin:14px 0 0}
+.lang{display:flex;justify-content:flex-end;gap:6px;margin:0 0 12px}
+.lang button{min-width:48px;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:600 14px var(--fb);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.lang button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .cta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 20px;border-radius:12px;font:600 16px var(--fb);text-decoration:none}
 .cta .go{background:var(--fg);color:var(--bg)}
@@ -135,15 +139,16 @@ dialog[open]::backdrop{animation:fade .32s ease}
 <body>
 <div class="wrap">
 <header>
-<p class="eye"><img src="icon-192.png" alt="" width="30" height="30">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</p>
-<h1>Sistemas web para o dia a dia de negócios de verdade</h1>
-<p class="lead">Agenda, pedidos, ordens de serviço, estoque e cobrança, pensados para usar no celular. Um produto no ar e protótipos para você abrir e testar agora.</p>
-<div class="cta"><a class="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir um orçamento</a><a class="soft" href="#ideia">Tenho uma ideia</a></div>
+<div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-l="pt" aria-pressed="true" lang="pt">PT</button><button type="button" data-l="en" aria-pressed="false" lang="en">EN</button></div>
+<p class="eye"><img src="icon-192.png" alt="" width="30" height="30"><span data-i="eye">Antônio Gabriel · desenvolvedor de sistemas · Campo Grande, MS</span></p>
+<h1 data-i="h1">Sistemas web para o dia a dia de negócios de verdade</h1>
+<p class="lead" data-i="lead">Agenda, pedidos, ordens de serviço, estoque e cobrança, pensados para usar no celular. Um produto no ar e protótipos para você abrir e testar agora.</p>
+<div class="cta"><a class="go" id="go" href="https://wa.me/5567996605633?text=Ol%C3%A1%2C%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20pedir%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-i="go">Pedir um orçamento</a><a class="soft" href="#ideia" data-i="soft">Tenho uma ideia</a></div>
 </header>
 
 <section aria-labelledby="s-live">
-<h2 id="s-live"><span class="dot" aria-hidden="true"></span>Projetos no ar</h2>
-<p class="sub">Em uso de verdade, com negócios cadastrados.</p>
+<h2 id="s-live"><span class="dot" aria-hidden="true"></span><span data-i="live">Projetos no ar</span></h2>
+<p class="sub" data-i="livesub">Em uso de verdade, com negócios cadastrados.</p>
 <div class="grid">
 <button type="button" class="card marcai wide" data-p="marcai" aria-haspopup="dialog">
 <div class="shot"><img src="img/m_land.jpg" alt="Página inicial do Marcaí" loading="lazy"><img src="img/m_salao.jpg" alt="Agendamento no Salão Aurora pelo Marcaí" loading="lazy"><img src="img/m_forno.jpg" alt="Pedido na Forno &amp; Afeto pelo Marcaí" loading="lazy"></div>
@@ -153,8 +158,8 @@ dialog[open]::backdrop{animation:fade .32s ease}
 </section>
 
 <section aria-labelledby="s-demo">
-<h2 id="s-demo">Projetos em demonstração e desenvolvimento</h2>
-<p class="sub">Nove protótipos que funcionam no celular, com dados de exemplo, login de teste e um link para o cliente final. A senha de todos é <b>demo</b>.</p>
+<h2 id="s-demo" data-i="demo">Projetos em demonstração e desenvolvimento</h2>
+<p class="sub" data-i="demosub">Nove protótipos que funcionam no celular, com dados de exemplo, login de teste e um link para o cliente final. A senha de todos é <b>demo</b>.</p>
 <div class="grid three">
 <button type="button" class="card" data-p="polo" aria-haspopup="dialog">
 <div class="shot"><img src="img/polo.jpg" alt="Tela inicial do Polo Clima" loading="lazy"></div>
@@ -196,20 +201,20 @@ dialog[open]::backdrop{animation:fade .32s ease}
 </section>
 
 <section class="idea" id="ideia" aria-labelledby="ideia-t">
-<div><h2 id="ideia-t">Tem uma ideia? Me conta</h2><p>Um sistema para o seu negócio, um aplicativo para a sua equipe ou algo que você faz no caderno e queria no celular. Escreva do seu jeito: a mensagem vai direto para o meu WhatsApp e eu respondo por lá.</p></div>
+<div><h2 id="ideia-t" data-i="ideat">Tem uma ideia? Me conta</h2><p data-i="ideap">Um sistema para o seu negócio, um aplicativo para a sua equipe ou algo que você faz no caderno e queria no celular. Escreva do seu jeito: a mensagem vai direto para o meu WhatsApp e eu respondo por lá.</p></div>
 <form id="f" novalidate>
-<label for="n">Seu nome</label><input id="n" autocomplete="name" placeholder="Ex.: Carla">
-<label for="b">O que você faz <span>(opcional)</span></label><input id="b" placeholder="Ex.: tenho uma oficina mecânica">
-<label for="i">Qual é a ideia?</label><textarea id="i" placeholder="Ex.: queria que o cliente acompanhasse o conserto do carro pelo celular."></textarea>
-<p class="err" id="e" hidden>Escreva a ideia em uma frase, pelo menos.</p>
-<a class="send" id="s" href="https://wa.me/5567996605633" target="_blank" rel="noopener">Mandar pelo WhatsApp</a>
+<label for="n" data-i="ln">Seu nome</label><input id="n" autocomplete="name" placeholder="Ex.: Carla" data-ip="pn">
+<label for="b" data-i="lb">O que você faz <span>(opcional)</span></label><input id="b" placeholder="Ex.: tenho uma oficina mecânica" data-ip="pb">
+<label for="i" data-i="li">Qual é a ideia?</label><textarea id="i" placeholder="Ex.: queria que o cliente acompanhasse o conserto do carro pelo celular." data-ip="pi"></textarea>
+<p class="err" id="e" hidden data-i="err">Escreva a ideia em uma frase, pelo menos.</p>
+<a class="send" id="s" href="https://wa.me/5567996605633" target="_blank" rel="noopener" data-i="send">Mandar pelo WhatsApp</a>
 </form>
 </section>
 
-<footer>Os protótipos usam negócios, pessoas e valores fictícios, e as fotos deles foram geradas por IA. O que você fizer neles fica salvo só no seu aparelho. As páginas de demonstração do Marcaí são negócios de exemplo dentro do sistema no ar.</footer>
+<footer data-i="foot">Os protótipos usam negócios, pessoas e valores fictícios, e as fotos deles foram geradas por IA. O que você fizer neles fica salvo só no seu aparelho. As páginas de demonstração do Marcaí são negócios de exemplo dentro do sistema no ar.</footer>
 </div>
 
-<dialog id="m" aria-labelledby="mt"><div class="mh"><h2 id="mt"></h2><button type="button" class="x" id="mx" aria-label="Fechar">×</button></div><div class="mb" id="mb"></div></dialog>
+<dialog id="m" aria-labelledby="mt"><div class="mh"><h2 id="mt"></h2><button type="button" class="x" id="mx" aria-label="Fechar" data-ia="close">×</button></div><div class="mb" id="mb"></div></dialog>
 
 <script>
 (function(){
@@ -240,29 +245,45 @@ shots:[["campo","Início do dono"]],
 feats:["Pesagem que calcula a média e o ganho por dia","Movimentação do gado em dois toques","Diário com fotos e registro de chuva","Capataz lança tudo, mas não vê o dinheiro","Ficha do lote para mandar ao comprador"],
 acc:"Entre como <code>dono</code> ou <code>capataz</code>",
 links:[["pri","https://agabrielr.github.io/campo-certo/","Abrir o protótipo"],["sec","https://agabrielr.github.io/campo-certo/?lote=4","Ver a ficha de um lote"]]}};
-var d=document.getElementById("m"),mb=document.getElementById("mb"),mt=document.getElementById("mt"),last=null;
+var S={"eye": "Antônio Gabriel · systems developer · Campo Grande, MS, Brazil", "h1": "Web systems for the daily work of real businesses", "lead": "Scheduling, orders, service orders, inventory and billing, designed for the phone. One live product and prototypes you can open and try right now.", "go": "Request a quote", "soft": "I have an idea", "live": "Live projects", "livesub": "In real use, with registered businesses.", "demo": "Demo and in-development projects", "demosub": "Nine prototypes that work on a phone, with sample data, a test login and a link for the end customer. The password for all of them is <b>demo</b>. The prototypes' interface is in Brazilian Portuguese.", "ideat": "Got an idea? Tell me", "ideap": "A system for your business, an app for your team, or something you keep in a notebook and wish was on your phone. Write it your way: the message goes straight to my WhatsApp and I reply there.", "ln": "Your name", "lb": "What you do <span>(optional)</span>", "li": "What's the idea?", "err": "Write the idea in one sentence, at least.", "send": "Send on WhatsApp", "foot": "The prototypes use fictional businesses, people and amounts, and their photos were generated by AI. What you do in them is saved only on your device. Marcaí's demo pages are example businesses inside the live system.", "pn": "E.g.: Carla", "pb": "E.g.: I run a car repair shop", "pi": "E.g.: I'd like customers to follow their car's repair on their phone.", "close": "Close", "more": "See details →", "morem": "See details and demo →"},PE={"marcai": {"who": "Barbershops, salons, sports courts and bakeries", "blurb": "Online scheduling and orders for small businesses. Each business gets its own page, and the customer books or orders from their phone, no account needed.", "alt": ["Marcaí home page", "Booking at Salão Aurora through Marcaí", "Order at Forno & Afeto through Marcaí"], "desc": "Scheduling and ordering platform for small businesses. Each business gets its own address, with its brand, its services and its calendar. The customer books or orders from their phone, with no account and no app to download.", "shots": ["Marcaí website", "Booking · Salão Aurora", "Order · Forno & Afeto"], "feats": ["Calendar that never lets two customers take the same slot", "Orders mode for bakeries and snack bars", "Quotes with deposit, Pix and recurring billing through Mercado Pago", "Instant alerts, WhatsApp confirmation and the month's numbers on the dashboard", "Team with their own access, customers and reviews"], "acc": null, "links": ["Open the Marcaí website", "Demo: book at Salão Aurora", "Demo: order at Forno & Afeto"], "tag": "Live since September 2026", "stack": ["Laravel 12", "PHP 8.4", "Vue 3", "Inertia.js", "Tailwind CSS 4", "MySQL 8", "Valkey", "Laravel Reverb", "Docker", "890+ tests"]}, "polo": {"who": "HVAC, security and solar", "blurb": "Store with its own inventory, service requests by link and service orders for the crew.", "alt": ["Polo Clima home screen"], "desc": "For companies that sell, install and maintain air conditioning, electric fences, cameras and solar power. A single catalog with stock and prices feeds the store, the service requests and the service orders.", "shots": ["Company home"], "feats": ["Customer store with the company's stock and prices", "Service requests by link, with photos, that become service orders", "Service orders with checklist, photos and automatic stock write-off", "Team with schedule, customer ratings and commission", "Month's income, receivables and what was left over", "Customer follows the job by service-order number"], "acc": "Sign in as <code>admin</code>, <code>diego</code> or <code>wesley</code>", "links": ["Open the prototype", "See the store as a customer", "Follow a job"]}, "obra": {"who": "Renovation and construction", "blurb": "Labor quotes and step-by-step tracking of the job, with photos and payment.", "alt": ["Bathroom renovation in ObraClara"], "desc": "Whoever is renovating describes the job and receives labor quotes, without one contractor seeing another's price. After hiring, they follow the work in stages, with photos and payment for each one.", "shots": ["Customer's job"], "feats": ["Quotes from several contractors, compared side by side", "Direct request to a contractor you already know", "The contractor replies through a link, no sign-up", "Contract, stages paid one by one and a photo diary", "Contractor tabs: in progress, in your area and for you"], "acc": "Sign in as <code>cliente</code> (customer) or <code>silva</code> (contractor)", "links": ["Open the prototype", "See a request as a contractor"]}, "campo": {"who": "Beef cattle ranch", "blurb": "Pastures, weighing with fattening calculated, a diary and the month's money.", "alt": ["Campo Certo dashboard"], "desc": "The daily routine of a beef cattle ranch on the phone, made for people who dislike spreadsheets: pastures and herds, weighing with the fattening calculated, a diary with photos and rainfall, vaccine tasks and the month's money.", "shots": ["Owner's home"], "feats": ["Weighing that calculates the average and the daily gain", "Cattle movement in two taps", "Diary with photos and rainfall log", "The foreman logs everything but can't see the money", "Herd sheet to send to the buyer"], "acc": "Sign in as <code>dono</code> (owner) or <code>capataz</code> (foreman)", "links": ["Open the prototype", "See a herd sheet"]}, "locafesta": {"who": "Parties and events", "blurb": "Rental of bouncy castles and tables: the customer sees what's free, accepts the contract and pays the deposit by Pix.", "alt": ["Locafesta screen"], "desc": "For those who rent bounce houses, inflatable castles, tables, tents and sound. The system knows what is free on each date, calculates delivery by neighborhood, sends the contract and locks the date with a Pix deposit. On the day, the delivery driver gets the route in order.", "shots": ["Dashboard", "Customer link"], "feats": ["Availability of each item by date", "Total with delivery by neighborhood, instantly", "Contract accepted by link and deposit by Pix", "Route for the day's deliveries and pickups", "Driver access with only the route"], "acc": "Sign in as <code>dono</code> (owner) or <code>entregador</code> (driver)", "links": ["Open the prototype", "See the booking as a customer"]}, "apito": {"who": "Schools, dance and languages", "blurb": "Classes, roll call on the phone, absence alerts, make-up classes with Pix and a guardian portal.", "alt": ["Apito screen"], "desc": "For sports schools (futsal, volleyball, swimming, ballet) and language schools. Classes with seats and a teacher, two-tap roll call, an alert to the guardian when the student is absent, make-up classes confirmed by Pix and monthly fees that clear on their own when the Pix arrives.", "shots": ["Dashboard", "Customer link"], "feats": ["Roll call on the phone, by class", "An absence becomes a credit and the guardian is alerted via WhatsApp", "Make-up class with the seat held until the Pix clears", "Monthly fee by Pix and a ready-made payment reminder", "Guardian portal with day-by-day attendance and Pix", "Teachers see only their own classes"], "acc": "Sign in as <code>dono</code> (owner) or <code>bruno</code> (teacher)", "links": ["Open the prototype", "See the guardian portal"]}, "patinhas": {"who": "Pet daycare and hotel", "blurb": "Spots per day, vaccines up to date and a daily report with photo for the owner.", "alt": ["Patinhas screen"], "desc": "For pet daycare, hotels and grooming. Occupancy per day, a pet record with allergies and vaccines, check-in and check-out, and a daily report with a photo sent to the owner by WhatsApp.", "shots": ["Dashboard", "Customer link"], "feats": ["Daycare and hotel spots per day", "An expired vaccine blocks the booking", "Daily report with photo for the owner", "Grooming schedule by size", "Staff without access to finances"], "acc": "Sign in as <code>dono</code> (owner) or <code>equipe</code> (staff)", "links": ["Open the prototype", "See a pet's day as the owner"]}, "festeiro": {"who": "Kids' party venue and hall", "blurb": "Schedule per hall, quote with instant total, contract and an invitation with an attendance list.", "alt": ["Festeiro screen"], "desc": "For children's party venues and event halls, from quote to party day. A calendar per hall and shift with no double-booking, a quote with the total instantly, a contract with a down payment and a host portal with a digital invitation and guest list.", "shots": ["Dashboard", "Customer link"], "feats": ["Schedule per hall and shift", "Quote with package and extras", "Party contract and installments", "Digital invitation with RSVP", "Day's work order for the staff"], "acc": "Sign in as <code>dono</code> (owner) or <code>equipe</code> (staff)", "links": ["Open the prototype", "See the invitation and guest list"]}, "caderneta": {"who": "Neighborhood shop", "blurb": "Store credit on the phone: who owes, how much, a ready WhatsApp reminder and a statement by link.", "alt": ["Caderneta screen"], "desc": "The neighborhood shop's credit notebook, on the phone. Log a sale on credit in three taps, see who owes and how much, get a warning when a limit is passed and collect by WhatsApp with Pix. The customer sees their own statement through a link.", "shots": ["Dashboard", "Customer link"], "feats": ["Log a credit sale in three taps", "Who owes, from overdue to due later", "Agreed-limit warning", "Ready-made collection message with Pix on WhatsApp", "Statement by link for the customer"], "acc": "Sign in as <code>dono</code> (owner) or <code>balcao</code> (counter)", "links": ["Open the prototype", "See the statement as a customer"]}, "chave": {"who": "Small real-estate agencies", "blurb": "Rentals, billing, rent adjustments, owner payouts and a tenant portal.", "alt": ["Chave na Mão screen"], "desc": "For small real-estate agencies and brokers who manage rentals. Contracts with due dates and adjustments, billing with write-off, owner payouts with the fee calculated, inspection with photos and maintenance requests approved by the owner.", "shots": ["Dashboard", "Customer link"], "feats": ["Portfolio with overdue payments and the month's adjustments", "Payout calculated per owner", "Move-in inspection with photos", "Maintenance request by the tenant", "Owner sees only their own properties"], "acc": "Sign in as <code>imob</code> (agency) or <code>aurelio</code> (owner)", "links": ["Open the prototype", "See the tenant portal"]}};
+var d=document.getElementById("m"),mb=document.getElementById("mb"),mt=document.getElementById("mt"),last=null,L="pt",cur=null;
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function open(k,from){var p=P[k];if(!p)return;last=from||null;d.style.setProperty("--a","var(--"+p.a+")");mt.innerHTML=(p.ico?'<img src="'+p.ico+'" alt="">':'')+esc(p.name);
-mb.innerHTML='<span class="'+(k==="marcai"?"live":"stack")+'">'+(k==="marcai"?esc(p.tag):'<span>'+esc(p.tag)+'</span>')+'</span><p style="margin:0">'+esc(p.desc)+'</p>'+
-'<div class="gal">'+p.shots.map(function(s){return '<figure><img src="img/'+s[0]+'.jpg" alt="'+esc(s[1])+'"><figcaption>'+esc(s[1])+'</figcaption></figure>'}).join("")+'</div>'+
-'<ul>'+p.feats.map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>'+
-(p.stack?'<div class="stack">'+p.stack.map(function(s){return '<span>'+esc(s)+'</span>'}).join("")+'</div>':'')+
-(p.acc?'<div class="acc">'+p.acc+'. A senha é <code>demo</code>.</div>':'')+
-'<div class="links">'+p.links.map(function(l){return '<a class="'+l[0]+'" href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[2])+'</a>'}).join("")+'</div>';
+function open(k,from){var p=P[k];if(!p)return;last=from||null;cur=k;var q=L==="en"?PE[k]:null;function g(f){return q&&q[f]!=null?q[f]:p[f]}d.style.setProperty("--a","var(--"+p.a+")");mt.innerHTML=(p.ico?'<img src="'+p.ico+'" alt="">':'')+esc(p.name);
+mb.innerHTML='<span class="'+(k==="marcai"?"live":"stack")+'">'+(k==="marcai"?esc(g("tag")):'<span>'+esc(L==="en"?"Prototype":p.tag)+'</span>')+'</span><p style="margin:0">'+esc(g("desc"))+'</p>'+
+'<div class="gal">'+p.shots.map(function(s,x){var c=q?q.shots[x]:s[1];return '<figure><img src="img/'+s[0]+'.jpg" alt="'+esc(c)+'"><figcaption>'+esc(c)+'</figcaption></figure>'}).join("")+'</div>'+
+'<ul>'+g("feats").map(function(f){return '<li>'+esc(f)+'</li>'}).join("")+'</ul>'+
+(g("stack")?'<div class="stack">'+g("stack").map(function(s){return '<span>'+esc(s)+'</span>'}).join("")+'</div>':'')+
+(p.acc?'<div class="acc">'+g("acc")+(L==="en"?'. The password is <code>demo</code>.':'. A senha é <code>demo</code>.')+'</div>':'')+
+'<div class="links">'+p.links.map(function(l,x){return '<a class="'+l[0]+'" href="'+l[1]+'" target="_blank" rel="noopener">'+esc(q?q.links[x]:l[2])+'</a>'}).join("")+'</div>';
 if(!d.open)d.showModal();mb.scrollTop=0;d.scrollTop=0;try{history.replaceState(null,"","#"+k)}catch(e){}}
 function close(){if(d.open)d.close()}
-d.addEventListener("close",function(){try{history.replaceState(null,"",location.pathname)}catch(e){}if(last)last.focus()});
+d.addEventListener("close",function(){cur=null;try{history.replaceState(null,"",location.pathname+(L==="en"?"?lang=en":""))}catch(e){}if(last)last.focus()});
 d.addEventListener("click",function(e){if(e.target===d)close()});
 document.getElementById("mx").addEventListener("click",close);
 document.querySelectorAll("[data-p]").forEach(function(b){b.addEventListener("click",function(){open(b.dataset.p,b)})});
 var h=location.hash.slice(1);if(P[h])open(h,document.querySelector('[data-p="'+h+'"]'));
 var n=document.getElementById("n"),bz=document.getElementById("b"),i=document.getElementById("i"),s=document.getElementById("s"),e=document.getElementById("e");
-function msg(){var t="Olá, Antônio! ",nm=n.value.trim(),z=bz.value.trim();if(nm)t+="Sou "+nm+(z?", "+z:"")+". ";else if(z)t+="Eu "+z+". ";return t+"Tenho uma ideia: "+i.value.trim()}
+function msg(){var nm=n.value.trim(),z=bz.value.trim(),t;if(L==="en"){t="Hi, Antônio! ";if(nm)t+="I'm "+nm+(z?", "+z:"")+". ";else if(z)t+="About me: "+z+". ";return t+"I have an idea: "+i.value.trim()}t="Olá, Antônio! ";if(nm)t+="Sou "+nm+(z?", "+z:"")+". ";else if(z)t+="Eu "+z+". ";return t+"Tenho uma ideia: "+i.value.trim()}
 function upd(){s.href="https://wa.me/5567996605633?text="+encodeURIComponent(msg());if(i.value.trim())e.hidden=true}
 [n,bz,i].forEach(function(x){x.addEventListener("input",upd)});
 s.addEventListener("click",function(ev){if(i.value.trim().length<5){ev.preventDefault();e.hidden=false;i.focus()}});
 document.getElementById("f").addEventListener("submit",function(ev){ev.preventDefault()});
-upd()})();
+upd();
+var cards=[].slice.call(document.querySelectorAll("[data-p]")).map(function(c){var im=[].slice.call(c.querySelectorAll(".shot img")),lv=c.querySelector(".live");return {c:c,k:c.dataset.p,who:c.querySelector(".who"),p:c.querySelector(".body p"),mo:c.querySelector(".more"),im:im,lv:lv,pt:{who:c.querySelector(".who").textContent,p:c.querySelector(".body p").textContent,mo:c.querySelector(".more").textContent,al:im.map(function(x){return x.alt}),lv:lv?lv.textContent:""}}});
+var tl=document.title,md=document.querySelector('meta[name="description"]'),mdp=md.content,gg=document.getElementById("go");
+function setL(l){L=l;var en=l==="en";document.documentElement.lang=en?"en":"pt-BR";document.title=en?"Antônio Gabriel · Portfolio":tl;md.content=en?"Web systems for businesses: Marcaí live and prototypes for services, renovation and ranching.":mdp;
+document.querySelectorAll("[data-i]").forEach(function(el){if(!el.hasAttribute("data-pt"))el.setAttribute("data-pt",el.innerHTML);el.innerHTML=en?S[el.dataset.i]:el.getAttribute("data-pt")});
+document.querySelectorAll("[data-ip]").forEach(function(el){if(!el.hasAttribute("data-pt"))el.setAttribute("data-pt",el.placeholder);el.placeholder=en?S[el.dataset.ip]:el.getAttribute("data-pt")});
+document.querySelectorAll("[data-ia]").forEach(function(el){if(!el.hasAttribute("data-pt"))el.setAttribute("data-pt",el.getAttribute("aria-label"));el.setAttribute("aria-label",en?S[el.dataset.ia]:el.getAttribute("data-pt"))});
+cards.forEach(function(o){var x=en?PE[o.k]:null;o.who.textContent=x?x.who:o.pt.who;o.p.textContent=x?x.blurb:o.pt.p;o.mo.textContent=x?(o.k==="marcai"?S.morem:S.more):o.pt.mo;o.im.forEach(function(m,ix){m.alt=x?x.alt[ix]:o.pt.al[ix]});if(o.lv)o.lv.textContent=x?x.tag:o.pt.lv});
+gg.href="https://wa.me/5567996605633?text="+encodeURIComponent(en?"Hi, Antônio! I saw your portfolio and I'd like to request a quote.":"Olá, Antônio! Vi seu portfólio e quero pedir um orçamento.");
+document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l)});
+upd();if(d.open&&cur)open(cur,last);try{localStorage.setItem("lang",l)}catch(x){}try{if(!d.open)history.replaceState(null,"",location.pathname+(en?"?lang=en":"")+location.hash)}catch(x){}}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setL(b.dataset.l)})});
+var ql=(new URLSearchParams(location.search).get("lang")||"").toLowerCase(),sv=null;try{sv=localStorage.getItem("lang")}catch(x){}
+var il=(ql==="en"||ql==="pt")?ql:(sv==="en"||sv==="pt")?sv:((navigator.language||"pt").toLowerCase().indexOf("pt")===0?"pt":"en");
+if(il==="en")setL("en");
+})();
 </script>
 </body>
 </html>
